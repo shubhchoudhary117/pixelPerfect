@@ -7,7 +7,7 @@ const AdminAuthRoutes=require("./routes/AdminRoutes/AdminAuthRoutes.js")
 const AdminRoutes=require("./routes/AdminRoutes/AdminRoutes.js")
 const path=require("path");
 const fs=require("fs")
-
+let dotenv=require("dotenv");
 
 // create a node app
 const app=express();
@@ -19,6 +19,8 @@ const PORT=process.env.PORT||8000;
 app.use(cors());
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+dotenv.config();
+
 
 // set the app routes
 app.use("/pixel/register",RegisterStudioRoutes)
